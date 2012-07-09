@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block extra_js %}
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=citruz"></script>
+{% if comment_errors %}
+<script type="text/javascript">
+   window.location="#comment_box";
+</script>
+{% endif %}
+{% endblock %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+
+{% block content %}
+{% load markup %}
+{% if post %}
+  <p class="post_title">
+    {{ post.title }}
+  </p>
+  <div id="hr_bar">&nbsp;</div>
+    <div class="post_body">
+       {{ post.body|textile }}
+    </div>
+
+  <p class="post_date">{{ post.pub_date|date:"F d, Y" }}</p>
+{% endif %}
+
+<div class="addthis_toolbox addthis_default_style">
+    <a href="http://addthis.com/bookmark.php?v=250" class="addthis_button_compact"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_livejournal"></a>
+    <a class="addthis_button_twitter"></a> 
+    <a class="addthis_button_email"></a>
+<!--    <a class="addthis_button_facebook_like"></a> -->
+    <span style="float:right"><a href="#page_top">back to top</a></span>
+</div>
+
+
+
+{% if com_list %}
+  <a name="comments" />
+  <p style="text-align:center;font-size:1em;color:#aaa;">&laquo;&nbsp;Comments&nbsp;&raquo;</p>
+
+  <div id="comment_list">
+    {% for com in com_list %}
+       <a name="{{ com.pk }}" />
+       <div class="com_header">
+          <span class="com_author">{{ com.name }}</span>
+	  <p class="com_date">{{ com.pub_date }}&nbsp;<a
+  class="permalink" title="Permalink to this comment" href="#{{ com.pk }}">#</a></p>
+       </div>
+       <div class="hr_com_bar">&nbsp;</div>
+       <blockquote>{{ com.body|textile }}</blockquote>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+{% if post.comments_enable %}
+  <a name="comment_box" />
+  <div id="comment_box">
+  <p id="comment_title">...</p>
+  {% if comment_errors %}
+    <p id="comment_errors">{{ comment_errors }}</p>
+  {% endif %}
+  
+  <form id="comment_form" action="/post/{{ post.pk }}/comment/"
+  method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <label class="form_labels" for="name">Name:</label><br />
+  <input type="text" name="name" id="com_name" value="{{ comment_error_name }}"/><br />
+  <label class="form_labels" for="comment">Comment:</label><br />
+  <textarea name="body" id="com_body" rows="10" cols="40">{{ comment_error_body }}</textarea><br />
+  <span class="form_labels">Human verification:</span>
+
+  <!-- reCAPTCHA -->
+  <style>
+  .recaptchatable {background-color: transparent !important; border: none !important;}
+  .recaptcha_image_cell {background-color: transparent !important;}
+  #recaptcha_response_field {border: 1px solid #AAA !important;}
+  </style>
+  <script>
+  var RecaptchaOptions = {
+    theme : 'clean'
+  };
+  </script>
+  <script type="text/javascript"
+    src="http://api.recaptcha.net/challenge?k={{ recapcha_pub_key }}">
+  </script>
+
+  <noscript>
+    <small>Please fill out this form before posting:</small><br>
+    <iframe src="http://api.recaptcha.net/noscript?k={{recapcha_pub_key }}"
+        height="300"
+        width="500"
+        frameborder="0"></Ifram name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+    <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+  </noscript>
+  <!-- reCAPTCHA -->
+
+  <p style="text-align:center">
+     <input type="submit" value="Submit" />
+  </p>
+  </form>
+  </div>
+{% endif %}
+{% endblock %}

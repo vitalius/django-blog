@@ -1,0 +1,269 @@
+@font-face { font-family: 'helvetica neue'; src: local('Arial'); }
+
+/* Color-combination: C0C0C0, FFFFBE, 003264 */
+
+a.title_link:link {text-decoration: none; color:#000;}
+a.title_link:visited {text-decoration: none; color:#000;}
+a.title_link:active {text-decoration: none; color:#000;}
+
+.home_link:link {text-decoration: none; color:#FFFFBE;}
+.home_link:visited {text-decoration: none; color:#FFFFBE;}
+.home_link:active {text-decoration: none; color:#FFFFBE;}
+
+body, html {
+  background-color:#ffffff;
+  margin:0px;
+  padding:0px;
+  font-family:Helvetica, Arial, sans-serif;
+  font-style:normal;
+  text-align:center;
+  min-width:800px;
+}
+img.center{
+  text-align:center;
+}
+#wrap {
+  width:750px;
+  margin:0px auto;
+  text-align:left;
+}
+
+#main {
+  float:left;
+  width:500px;
+  padding-top:30px;
+}
+
+#sidebar {
+  float:right;
+  width:250px;
+  padding-top:0px;
+}
+
+#footer {
+  clear:both;
+}
+
+#top_bar {
+  width: 100%;
+  height:60px;
+  background:#3f5f5f; /* #097054; #3f5f5f; #cc0000; #003366; #097054; #003264*/
+
+  text-align:left;
+  font-size:1.5em;
+  line-height:2.5em;
+
+  color:#FFFFBE;
+  text-shadow: #111111 2px 2px 5px;
+}
+
+#home_button {
+  float:left;
+  text-align: center;
+  height:100%;
+  width: 60px;
+} 
+
+.shadow {
+    text-shadow: #FFFFFF 0px 0px 5px;
+}
+
+.post_title {
+  font-size:2em; /* 16*2=32 */
+  color:#000;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+.post_body {
+  font-size:1em;
+  line-height:1.5em;
+  color:#222222;
+}
+
+.post_date {
+  font-size:.75em; /* 16*0.75=12*/
+  color:#777777;
+  margin-top:15px;
+  margin-bottom:20px;
+}
+
+span#index_title {
+  margin: 0px;
+  color:#000000;
+  font-size:1.2em;
+}
+
+span#index_date {
+  margin: 0px;
+  color:#777777;
+  font-size:0.8em;
+  line-height: 2em;
+}
+
+/* Side blocks */
+.side_block {
+  padding-bottom:0px;
+  padding-left:30px;
+}
+
+.paragraph {
+  color:#333;
+  font-size:1.5em;
+}
+
+.side_box_title {
+  font-size:1.0em;
+  line-height:1.5em;
+  color:#333;
+}
+
+.side_box_elements {
+  color:#333;
+  font-size:0.9em;
+  line-height:1.5em;
+  margin-top:2px;
+  margin-bottom:20px;
+}
+
+.cat_count {
+  font-size:1em;
+  color:#aaa;
+}
+
+#footer_info {
+  text-align:center;
+  padding:5px 0px 0px 0px;
+}
+
+#arrow_nav {
+  padding-top:20px;
+  color:#777;
+  font-size:2em;
+}
+
+#hr_bar {
+  width:100%;
+  height:1px;
+  line-height:1px;
+  padding:0px;
+  margin-top: 3px;
+  background: #555555;
+}
+
+img {
+  border:0px;
+}
+
+/* AddThis doesn't have an option to remove ads q_q */
+div#at16pf {
+  display:none;
+}
+
+
+
+/* Comments Form CSS */
+#comment_box {
+  background: #F7F7F7;
+
+  /*
+  background: -moz-linear-gradient(top, #fbfbfb, #ffffff);
+  background: -webkit-gradient(linear,
+                left top, left bottom, from(#fbfbfb), to(#ffffff));
+
+  background-color: #fafafa;
+  */
+
+  padding: 5px 0px 5px 30px;
+  margin: 50px 0px 30px 0px;
+
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  
+  -moz-box-shadow: 0px -2px 7px #ccc;
+  -webkit-box-shadow: 0px -2px 7px #ccc;
+  box-shadow: 0px -2px 7px #ccc;
+   
+}
+
+#comment_title {
+  font-size:1.5em;
+  color:#676767;
+}
+
+.form_labels {
+  font-size:1.2em;
+  color:#555555;
+}
+
+input {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 95%;
+  height: 150px;
+  margin-bottom: 20px;
+  font-family: alltext, Helvetica, sans-serif;
+}
+
+p#comment_errors {
+  color:#ff0000;
+}
+
+/* Comments CSS */
+.hr_com_bar {
+  width:100%;
+  height:1px;
+  line-height:1px;
+  padding: 0px;
+  margin: 5px 0px 0px 0px;
+  background: #eee;
+  clear:both;
+}
+
+blockquote {
+  color: #000000;
+  margin: -5px 0px 20px 20px;
+  background: transparent url(/static/blockquote.gif) no-repeat scroll 0pt 0px;
+  padding-left: 23px;
+}
+
+.com_header {
+  margin:0;
+  padding:20px 0px 0px 0px;
+}
+
+.com_author {
+  margin: 0px;
+  padding: 0px;
+  color:#555;
+  font-size:1.2em;
+  font-weight:bold;
+  float: left;
+}
+
+.com_date {
+  margin: 0px;
+  padding-top: 3px;
+  float: right;
+  color:#777;
+  font-size:0.8em;
+}
+
+a.permalink:link {text-decoration: none;}
+a.permalink:visited {text-decoration: none;}
+a.permalink:active {text-decoration: none;}
+a.permalink:hover {text-decoration: none;}
+
+#hr_foot_bar {
+  width:100%;
+  height:1px;
+  line-height:1px;
+  padding: 0px;
+  margin: 10px 0px 20px 0px;
+  background: #ccc;
+  clear:both;
+}

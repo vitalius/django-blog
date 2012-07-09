@@ -1,0 +1,193 @@
+<!-- meta name="GENERATOR" content="Microsoft Frontpage 1.0" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="/static/base.css" />
+<link rel="shortcut icon" href="/static/awesome.png" /> 
+
+<script type="text/javascript" src="/static/jquery.js"></script>
+<script type="text/javascript" src="/static/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/static/jquery.measurer.js"></script>
+<script type="text/javascript" src="/static/jquery.gradienttext.js"></script>
+<script type="text/javascript" src="/static/bsgen.js"></script>
+<script type="text/javascript" src="/static/load.js"></script>
+{% block extra_js %}{% endblock %}
+
+<title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<a name="page_top" />
+
+<div id="top_bar">
+  <div id="home_button">
+     <a title="Home" class="shadow home_link" href="/index">&#8734;</a>
+  </div>
+    Extremely lucky number &#8594; <span id="rand_num">9</span>
+</div>
+
+<!-- What do you call this... source code? teh sauze? spaghetti? -->
+
+<div id="wrap">
+<div id="main">
+{% block content %}{% endblock %}
+</div>
+
+<div id="sidebar">
+  <span class="post_title">&nbsp;</span>
+
+  <div class="side_block">
+    <span class="paragraph">&#167;&nbsp;</span><span class="side_box_title">About</span>
+    <p class="side_box_elements">
+    <span id="about_string">
+      This is a Web 2.0 footprint on the blogosphere and social medias.
+    </span>
+    </p>
+  </div>
+
+{% if cat_links and cat_links|length > 1 %}
+  <div class="side_block">
+    <span class="paragraph">&#167;&nbsp;</span><span class="side_box_title">Topics</span>
+    <p class="side_box_elements">
+    {% for cat, count in cat_links %}
+        {% if not forloop.last %}
+        <a href="/category/{{cat.id}}">{{ cat.name }}</a><span class="cat_count"> ({{ count }})</span><br/>
+	{% else %}
+           <a href="/index/">Everything</a><span class="cat_count"> ({{ count }})</span><br/>
+	{% endif %}
+    {% endfor %}
+    </p>
+  </div>
+{% endif %}
+</div>
+
+<!-- Do you like reading sauze code? -->
+
+<div id="footer">
+  <div id="footer_info">
+    <!--[if IE ]>
+    <p>You are using <a href="http://www.urbandictionary.com/define.php?term=Internet+Explorer">Internet Explorer</a> instead of <a href="http://www.firefox.com"><img src="/static/firefox.png" alt="firefox" ALIGN=ABSMIDDLE></a></p>
+    <![endif]-->
+
+    {% comment %}    
+    <p style="text-align:left;font-size:0.8em;color:#777;width:90%;">
+    <b>Disclaimer:</b><br />Comments are welcome. Tasteless and insulting comments may be deleted. Any personal remarks and attacks may be deleted. Any comments that reek of spam or marketing messages will be deleted. Author of this blog is not responsible for the content in comments other than those made by him.</p>
+    {% endcomment %}
+
+    <div id="hr_foot_bar">&nbsp;</div> 
+    <p id="copyleft_notice" style="text-align:center;font-size:0.8em;color:#aaa;width:90%;line-height:1.5em;">.</p> 
+
+    {% comment %}
+    <a href="http://www.firefox.com"><img src="/static/firefox.png" alt="firefox"/></a>
+    <a href="http://www.ubuntu.com"><img src="/static/ubuntu.png" alt="ubuntu"/></a>
+    <a href="http://www.djangoproject.com"><img src="/static/django.gif" alt="django"/></a>
+    <a href="http://www.python.org"><img src="/static/python.png" alt="python"/></a>
+    <a href="http://www.jquery.org"><img src="/static/jquery.png" alt="jquery"/></a>
+    <a href="http://www.linux.org"><img src="/static/linux.png" alt="linux"/></a>
+    {% endcomment %}
+
+  </div>
+</div>
+
+</div>
+ 
+</body>
+</html>
