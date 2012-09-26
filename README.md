@@ -1,6 +1,4 @@
 django-blog
 ===========
 
-Personal blog application with Django python web-framework and SQLite database.
-
-Blog in action - http://blog.cloudmotion.com
+An attempt to familiarize with Django framework, its content admin/management interface and templating.
